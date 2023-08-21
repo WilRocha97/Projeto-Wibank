@@ -1,4 +1,4 @@
-const { func } = require("prop-types");
+import ehUmCPF from "./valida-cpf.js";
 
 const camposDoFormulario = document.querySelectorAll("[required]")
 
@@ -7,5 +7,8 @@ camposDoFormulario.forEach((campo) => {
 })
 
 function verificaCampo(campo) {
+    if (campo.name == "cpf" && campo.value.lenght >= 11) {
+        ehUmCPF(campo);
+    }
     
 }
